@@ -47,11 +47,12 @@ public class ApplicationTest  {
 
     @Test
     public void checkAddedAccount() {
-        try {
-            assertTrue(expenseManager.getAccountsDAO().getAccount("2001").getAccountNo().equals("2001") );
-        } catch (InvalidAccountException e){
-            fail();
-        }
+//        try {
+//            assertTrue(expenseManager.getAccountsDAO().getAccount("2001").getAccountNo().equals("2001") );
+//        } catch (InvalidAccountException e){
+//            fail();
+//        }
+        assertTrue(expenseManager.getAccountNumbersList().contains("2001") );
 
     }
 }
