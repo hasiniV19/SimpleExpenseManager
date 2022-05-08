@@ -68,13 +68,13 @@ public class SQLiteTransactionDAO implements TransactionDAO {
 
                 // create date object
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-                Date date = simpleDateFormat.parse(cursor.getString(cursor.getColumnIndex("date")));
+                Date date = simpleDateFormat.parse(cursor.getString(cursor.getColumnIndexOrThrow("date")));
 
                 // accountNo
-                String accountNo = cursor.getString(cursor.getColumnIndex("accountNo"));
+                String accountNo = cursor.getString(cursor.getColumnIndexOrThrow("accountNo"));
 
                 // get expense type
-                String expenseTypeStr = cursor.getString(cursor.getColumnIndex("expenseType"));
+                String expenseTypeStr = cursor.getString(cursor.getColumnIndexOrThrow("expenseType"));
                 ExpenseType expenseType = null;
                 if (expenseTypeStr.equals(ExpenseType.EXPENSE.toString())) {
                     expenseType = ExpenseType.EXPENSE;
@@ -83,7 +83,7 @@ public class SQLiteTransactionDAO implements TransactionDAO {
                 }
 
                 // amount
-                double amount = cursor.getDouble(cursor.getColumnIndex("amount"));
+                double amount = cursor.getDouble(cursor.getColumnIndexOrThrow("amount"));
 
                 // create a transaction object
                 Transaction transaction = new Transaction(date, accountNo, expenseType, amount);
