@@ -35,11 +35,11 @@ lk/ac/mrt/cse/dbs/simpleexpensemanager/control/InMemoryDemoExpenseManager.java
 lk/ac/mrt/cse/dbs/simpleexpensemanager/ui/MainActivity.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.MainActivity
  lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.MainActivity$SectionsPagerAdapter
-lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/SQLiteTransactionDAO.java
- lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.SQLiteTransactionDAO
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/db/SQLiteConnector.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.db.SQLiteConnector
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/SQLiteAccountDAO.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.SQLiteAccountDAO
 lk/ac/mrt/cse/dbs/simpleexpensemanager/control/PersistentExpenseManager.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PersistentExpenseManager
+lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/SQLiteTransactionDAO.java
+ lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.SQLiteTransactionDAO
