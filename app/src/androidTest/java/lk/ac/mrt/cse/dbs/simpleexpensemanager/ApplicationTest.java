@@ -25,9 +25,12 @@ import androidx.test.core.app.ApplicationProvider;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Date;
+
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.ExpenseManager;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PersistentExpenseManager;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.exception.InvalidAccountException;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -53,6 +56,17 @@ public class ApplicationTest  {
 //            fail();
 //        }
         assertTrue(expenseManager.getAccountNumbersList().contains("2001") );
+
+    }
+
+    @Test
+    public void testLogTransaction() {
+        Context context = ApplicationProvider.getApplicationContext();
+        expenseManager = new PersistentExpenseManager(context);
+        int num_trans_bef = expenseManager.getTransactionLogs().size();
+        expenseManager.getTransactionsDAO().logTransaction(new Date(), "2001", ExpenseType.INCOME, 1000);
+        int num_trans_aft = expenseManager.getTransactionLogs().size();
+        assertTrue(num_trans_aft - num_trans_bef == 1);
 
     }
 }
