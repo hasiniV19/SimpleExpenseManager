@@ -32,7 +32,7 @@ public class SQLiteAccountDAO implements AccountDAO {
 
         try {
             while (cursor.moveToNext()) {
-                String accountNo = cursor.getString(cursor.getColumnIndex("accountNo"));
+                String accountNo = cursor.getString(cursor.getColumnIndexOrThrow("accountNo"));
                 accountNumbers.add(accountNo);
             }
         } finally {
@@ -52,10 +52,10 @@ public class SQLiteAccountDAO implements AccountDAO {
         try {
             while (cursor.moveToNext()) {
                 // get details of account
-                String accountNo = cursor.getString(cursor.getColumnIndex("accountNo"));
-                String bankName = cursor.getString(cursor.getColumnIndex("bankName"));
-                String accountHolderName = cursor.getString(cursor.getColumnIndex("accountHolderName"));
-                double balance = cursor.getDouble(cursor.getColumnIndex("balance"));
+                String accountNo = cursor.getString(cursor.getColumnIndexOrThrow("accountNo"));
+                String bankName = cursor.getString(cursor.getColumnIndexOrThrow("bankName"));
+                String accountHolderName = cursor.getString(cursor.getColumnIndexOrThrow("accountHolderName"));
+                double balance = cursor.getDouble(cursor.getColumnIndexOrThrow("balance"));
 
                 // create an account object
                 Account account = new Account(accountNo, bankName, accountHolderName, balance);
@@ -80,9 +80,9 @@ public class SQLiteAccountDAO implements AccountDAO {
             }
             if (cursor.moveToFirst()) {
                 // get details of account
-                String bankName = cursor.getString(cursor.getColumnIndex("bankName"));
-                String accountHolderName = cursor.getString(cursor.getColumnIndex("accountHolderName"));
-                double balance = cursor.getDouble(cursor.getColumnIndex("balance"));
+                String bankName = cursor.getString(cursor.getColumnIndexOrThrow("bankName"));
+                String accountHolderName = cursor.getString(cursor.getColumnIndexOrThrow("accountHolderName"));
+                double balance = cursor.getDouble(cursor.getColumnIndexOrThrow("balance"));
 
                 // create an account object
                 account = new Account(accountNo, bankName, accountHolderName, balance);
