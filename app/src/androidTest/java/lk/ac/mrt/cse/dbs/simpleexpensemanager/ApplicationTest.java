@@ -61,8 +61,8 @@ public class ApplicationTest  {
 
     @Test
     public void testLogTransaction() {
-        Context context = ApplicationProvider.getApplicationContext();
-        expenseManager = new PersistentExpenseManager(context);
+//        Context context = ApplicationProvider.getApplicationContext();
+//        expenseManager = new PersistentExpenseManager(context);
         int num_trans_bef = expenseManager.getTransactionLogs().size();
         expenseManager.getTransactionsDAO().logTransaction(new Date(), "2001", ExpenseType.INCOME, 1000);
         int num_trans_aft = expenseManager.getTransactionLogs().size();
